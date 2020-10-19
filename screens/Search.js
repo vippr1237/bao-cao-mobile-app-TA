@@ -11,16 +11,16 @@ export default Search =({navigation})=> {
     const [cities,setCities] = useState([])
     const fetchCities = (text)=>{
         setCity(text)
-        fetch("https://api.weather.com/v3/location/search?apiKey=6532d6454b8aa370768e63d6ba5a832e&language=en-US&query="+text+"&locationType=city&format=json")    
-      .then(res=>res.json())    
-      .then(data=>{    
-        setCities(data.location.address)
-    })
-        // fetch("https://autocomplete.wunderground.com/aq?query="+text)
-        // .then(item=>item.json())
-        // .then(city=>{
-        //     setCities(city.RESULTS.slice(0,9))
-        // })
+    //     fetch("https://api.weather.com/v3/location/search?apiKey=6532d6454b8aa370768e63d6ba5a832e&language=en-US&query="+text+"&locationType=city&format=json")    
+    //   .then(res=>res.json())    
+    //   .then(data=>{    
+    //     setCities(data.location.address)
+    // })
+        fetch("https://autocomplete.wunderground.com/aq?query="+text)
+        .then(item=>item.json())
+        .then(cityData=>{
+            setCities(cityData.RESULTS.slice(0,9))
+        })
     }
     const btnClick = async ()=>{
         await AsyncStorage.setItem("newcity",city)

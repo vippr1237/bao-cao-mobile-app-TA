@@ -33,8 +33,8 @@ const App= () => {
          tabBarOptions={{
            activeTintColor:"white",
            inactiveTintColor:"gray",
-           activeBackgroundColor:"#00aaff",
-           inactiveBackgroundColor:"#00aaff"
+           activeBackgroundColor:"#66ffb5",
+           inactiveBackgroundColor:"#66ffb5"
          }}
 
 
